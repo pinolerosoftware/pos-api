@@ -16,7 +16,10 @@ export class CategoryService {
   }
 
   findOne(id: number) {
-    return this.categoriesRepo.findOne({where: {id}, relations: ['tenant']});
+    return this.categoriesRepo.findOne({
+      where: { id },
+      relations: ['tenant'],
+    });
   }
 
   create(body: any) {
