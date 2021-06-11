@@ -1,5 +1,6 @@
 import { Category } from '../../category/entities/category.entity';
 import { Tenant } from '../../tenant/entities/tenant.entity';
+import { TypeEnum } from '../enums';
 import {
   Entity,
   Column,
@@ -29,6 +30,9 @@ export class Product {
 
   @Column()
   description: string;
+
+  @Column({ default: TypeEnum.Stock })
+  Type?: TypeEnum;
 
   @Column({ default: true })
   active: boolean;

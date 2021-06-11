@@ -29,7 +29,6 @@ export class TenantService {
   }
 
   async delete(id: number) {
-    await this.tenantsRepo.delete(id);
-    return true;
+    return await this.tenantsRepo.delete(id);
   }
 }
